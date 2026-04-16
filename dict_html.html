@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dicionário de HTML — referência visual de tags, atributos e seletores CSS com exemplos práticos.">
+    <title>Dict HTML · Referência</title>
+    <link rel="stylesheet" href="dict_style.css">
+</head>
+<body>
+
+<div class="bg-photo"></div>
+<div class="bg-overlay"></div>
+<div class="bg-grain"></div>
+
+<div class="page">
+
+    <!-- cabeçalho -->
+    <header class="header">
+        <p class="label-topo">referência</p>
+        <h1 class="titulo-principal">Dict <em>HTML</em></h1>
+        <p class="subtitulo">Tags, atributos, seletores e conceitos essenciais explicados de forma simples.</p>
+
+        <nav class="nav-categorias" id="nav-categorias">
+            <a href="#estrutura">estrutura</a>
+            <div class="nav-sep"></div>
+            <a href="#texto">texto</a>
+            <div class="nav-sep"></div>
+            <a href="#listas">listas</a>
+            <div class="nav-sep"></div>
+            <a href="#links-midia">links & mídia</a>
+            <div class="nav-sep"></div>
+            <a href="#formularios">formulários</a>
+            <div class="nav-sep"></div>
+            <a href="#semantica">semântica</a>
+            <div class="nav-sep"></div>
+            <a href="#css-seletores">css</a>
+        </nav>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- ── ESTRUTURA ── -->
+    <section class="secao" id="estrutura">
+        <div class="secao-header">
+            <span class="secao-titulo">estrutura</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;!DOCTYPE html&gt;</code>
+                    <span class="entry-badge">declaração</span>
+                </div>
+                <p class="entry-desc">Informa ao navegador que o documento usa HTML5. Deve ser a primeira linha de todo arquivo HTML.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;...&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;html&gt;</code>
+                    <span class="entry-badge">raiz</span>
+                </div>
+                <p class="entry-desc">Elemento raiz da página. O atributo <code>lang</code> define o idioma — importante para acessibilidade e SEO.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;html lang="pt-br"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;head&gt;</code>
+                    <span class="entry-badge">metadados</span>
+                </div>
+                <p class="entry-desc">Contém informações sobre a página que não aparecem visualmente: título, charset, links de CSS, meta tags, etc.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Minha Página&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;meta&gt;</code>
+                    <span class="entry-badge">metadados</span>
+                </div>
+                <p class="entry-desc">Tag auto-fechante usada dentro do <code>&lt;head&gt;</code>. Define charset, viewport, descrição da página e mais.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+  content="width=device-width,
+           initial-scale=1.0"&gt;
+&lt;meta name="description"
+  content="Descrição da página"&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;title&gt;</code>
+                    <span class="entry-badge">metadados</span>
+                </div>
+                <p class="entry-desc">Define o título exibido na aba do navegador e nos resultados de busca. Essencial para SEO.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;title&gt;Luigi · Portfólio&lt;/title&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;body&gt;</code>
+                    <span class="entry-badge">conteúdo</span>
+                </div>
+                <p class="entry-desc">Todo o conteúdo visível da página vai aqui: texto, imagens, links, formulários, etc.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;body&gt;
+  &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;div&gt;</code>
+                    <span class="entry-badge">container</span>
+                </div>
+                <p class="entry-desc">Container genérico de bloco. Não tem significado semântico — usado para agrupar elementos e aplicar estilos.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;div class="card"&gt;
+  &lt;p&gt;Conteúdo aqui&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;span&gt;</code>
+                    <span class="entry-badge">container</span>
+                </div>
+                <p class="entry-desc">Container genérico <em>inline</em>. Usado para estilizar partes do texto sem quebrar o fluxo da linha.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Texto com
+  &lt;span class="destaque"&gt;
+    palavra
+  &lt;/span&gt;
+em negrito.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── TEXTO ── -->
+    <section class="secao" id="texto">
+        <div class="secao-header">
+            <span class="secao-titulo">texto</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;h1&gt; — &lt;h6&gt;</code>
+                    <span class="entry-badge">heading</span>
+                </div>
+                <p class="entry-desc">Títulos em 6 níveis hierárquicos. Apenas um <code>&lt;h1&gt;</code> por página (SEO). Os demais organizam o conteúdo.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Seção menor&lt;/h3&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;p&gt;</code>
+                    <span class="entry-badge">bloco</span>
+                </div>
+                <p class="entry-desc">Define um parágrafo de texto. O navegador adiciona espaçamento automático acima e abaixo.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+&lt;p&gt;Este é outro parágrafo.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;strong&gt;</code>
+                    <span class="entry-badge">inline</span>
+                </div>
+                <p class="entry-desc">Destaca texto com importância semântica. Visualmente exibe em negrito. Diferente de <code>&lt;b&gt;</code> que é só visual.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Não esqueça de
+  &lt;strong&gt;salvar&lt;/strong&gt;
+o arquivo.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;em&gt;</code>
+                    <span class="entry-badge">inline</span>
+                </div>
+                <p class="entry-desc">Ênfase semântica — aparece em itálico. Usado quando o tom ou significado da palavra muda na frase.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Eu &lt;em&gt;realmente&lt;/em&gt;
+preciso estudar.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;br&gt;</code>
+                    <span class="entry-badge">inline</span>
+                </div>
+                <p class="entry-desc">Quebra de linha dentro de um texto. Auto-fechante. Use com moderação — prefira CSS para espaçamento.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Linha 1&lt;br&gt;
+Linha 2&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;code&gt;</code>
+                    <span class="entry-badge">inline</span>
+                </div>
+                <p class="entry-desc">Exibe texto em fonte monospace, indicando que é código. Usado inline dentro de parágrafos.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;p&gt;Use
+  &lt;code&gt;console.log()&lt;/code&gt;
+para depurar.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;pre&gt;</code>
+                    <span class="entry-badge">bloco</span>
+                </div>
+                <p class="entry-desc">Preserva espaços e quebras de linha exatamente como escritos. Geralmente combinado com <code>&lt;code&gt;</code>.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;pre&gt;&lt;code&gt;
+function ola() {
+  return "mundo";
+}
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;blockquote&gt;</code>
+                    <span class="entry-badge">bloco</span>
+                </div>
+                <p class="entry-desc">Representa uma citação longa de outra fonte. O atributo <code>cite</code> pode indicar a URL da origem.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;blockquote cite="https://..."&gt;
+  &lt;p&gt;"A simplicidade é a
+  sofisticação máxima."&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── LISTAS ── -->
+    <section class="secao" id="listas">
+        <div class="secao-header">
+            <span class="secao-titulo">listas</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;ul&gt;</code>
+                    <span class="entry-badge">lista</span>
+                </div>
+                <p class="entry-desc">Lista não-ordenada — exibe itens com marcadores (bullets). Usada quando a ordem não importa.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;ul&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+  &lt;li&gt;C#&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;ol&gt;</code>
+                    <span class="entry-badge">lista</span>
+                </div>
+                <p class="entry-desc">Lista ordenada — numera os itens automaticamente. Útil para passos, rankings ou sequências.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;ol&gt;
+  &lt;li&gt;Abrir o terminal&lt;/li&gt;
+  &lt;li&gt;Clonar o repo&lt;/li&gt;
+  &lt;li&gt;Rodar o projeto&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;li&gt;</code>
+                    <span class="entry-badge">lista</span>
+                </div>
+                <p class="entry-desc">Item de lista — deve ser filho direto de <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>. Pode conter qualquer conteúdo HTML.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item simples&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Item
+    em negrito&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;dl&gt; / &lt;dt&gt; / &lt;dd&gt;</code>
+                    <span class="entry-badge">lista</span>
+                </div>
+                <p class="entry-desc">Lista de definições: <code>&lt;dl&gt;</code> = container, <code>&lt;dt&gt;</code> = termo, <code>&lt;dd&gt;</code> = definição. Ideal para glossários.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup
+    Language&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── LINKS & MÍDIA ── -->
+    <section class="secao" id="links-midia">
+        <div class="secao-header">
+            <span class="secao-titulo">links & mídia</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;a&gt;</code>
+                    <span class="entry-badge">link</span>
+                </div>
+                <p class="entry-desc">Âncora — cria hyperlinks. O atributo <code>href</code> define o destino. <code>target="_blank"</code> abre em nova aba.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;a href="https://github.com"
+   target="_blank"&gt;
+  GitHub
+&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;img&gt;</code>
+                    <span class="entry-badge">mídia</span>
+                </div>
+                <p class="entry-desc">Exibe uma imagem. <code>src</code> é o caminho, <code>alt</code> é o texto alternativo (obrigatório para acessibilidade).</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;img src="foto.jpg"
+     alt="Foto de perfil"
+     width="200"&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;video&gt;</code>
+                    <span class="entry-badge">mídia</span>
+                </div>
+                <p class="entry-desc">Embute vídeo na página. Suporta múltiplos <code>&lt;source&gt;</code> para diferentes formatos. <code>controls</code> exibe os controles.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;video controls width="400"&gt;
+  &lt;source src="video.mp4"
+          type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;audio&gt;</code>
+                    <span class="entry-badge">mídia</span>
+                </div>
+                <p class="entry-desc">Embute áudio na página. Funciona da mesma forma que <code>&lt;video&gt;</code> com o atributo <code>controls</code>.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;audio controls&gt;
+  &lt;source src="musica.mp3"
+          type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;iframe&gt;</code>
+                    <span class="entry-badge">embed</span>
+                </div>
+                <p class="entry-desc">Incorpora outra página ou conteúdo externo (YouTube, Google Maps, etc.) dentro da página atual.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;iframe
+  src="https://maps.google.com/..."
+  width="400"
+  height="300"
+  loading="lazy"&gt;
+&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;link&gt;</code>
+                    <span class="entry-badge">metadados</span>
+                </div>
+                <p class="entry-desc">Usado no <code>&lt;head&gt;</code> para vincular recursos externos, principalmente arquivos CSS e fontes.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;link rel="stylesheet"
+      href="style.css"&gt;
+&lt;link rel="icon"
+      href="favicon.ico"&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── FORMULÁRIOS ── -->
+    <section class="secao" id="formularios">
+        <div class="secao-header">
+            <span class="secao-titulo">formulários</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;form&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Container que agrupa campos de formulário. <code>action</code> define para onde os dados vão; <code>method</code> define GET ou POST.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;form action="/submit"
+      method="POST"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;input&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Campo de entrada. O atributo <code>type</code> define o tipo: text, email, password, checkbox, radio, file, etc.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;input type="text"
+       name="nome"
+       placeholder="Seu nome"
+       required&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;label&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Rótulo de um campo. O atributo <code>for</code> deve corresponder ao <code>id</code> do input — melhora acessibilidade.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input id="email"
+       type="email"&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;textarea&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Campo de texto multilinha. Os atributos <code>rows</code> e <code>cols</code> definem o tamanho inicial visível.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;textarea name="msg"
+          rows="4"
+          placeholder="Mensagem..."&gt;
+&lt;/textarea&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;select&gt; / &lt;option&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Cria um menu dropdown. <code>&lt;select&gt;</code> é o container e cada <code>&lt;option&gt;</code> é uma escolha disponível.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;select name="pais"&gt;
+  &lt;option value="br"&gt;Brasil&lt;/option&gt;
+  &lt;option value="fr"&gt;França&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;button&gt;</code>
+                    <span class="entry-badge">formulário</span>
+                </div>
+                <p class="entry-desc">Botão clicável. <code>type="submit"</code> envia o form; <code>type="button"</code> age via JavaScript; <code>type="reset"</code> limpa.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;button type="submit"&gt;
+  Enviar
+&lt;/button&gt;
+&lt;button type="reset"&gt;
+  Limpar
+&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── SEMÂNTICA ── -->
+    <section class="secao" id="semantica">
+        <div class="secao-header">
+            <span class="secao-titulo">semântica</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;header&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Cabeçalho de uma página ou seção. Geralmente contém logo, título principal e navegação.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;header&gt;
+  &lt;h1&gt;Meu Site&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;nav&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Marcador de navegação principal. Indica ao navegador e leitores de tela que o conteúdo é um menu de links.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;nav&gt;
+  &lt;a href="#home"&gt;Home&lt;/a&gt;
+  &lt;a href="#sobre"&gt;Sobre&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;main&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Conteúdo principal único da página. Deve existir somente um por documento e não deve conter headers/footers repetidos.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;main&gt;
+  &lt;h1&gt;Artigo Principal&lt;/h1&gt;
+  &lt;p&gt;Conteúdo único...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;section&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Agrupa conteúdo temático relacionado. Diferente de <code>&lt;div&gt;</code>, tem significado semântico e geralmente tem um título.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;section id="projetos"&gt;
+  &lt;h2&gt;Projetos&lt;/h2&gt;
+  ...
+&lt;/section&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;article&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Conteúdo independente e redistribuível, como posts de blog, cards de produto ou comentários.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;article&gt;
+  &lt;h2&gt;Post do Blog&lt;/h2&gt;
+  &lt;p&gt;Conteúdo...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;aside&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Conteúdo relacionado mas secundário — barras laterais, notas extras, widgets de redes sociais.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;aside&gt;
+  &lt;h3&gt;Leia também&lt;/h3&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;footer&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Rodapé de página ou seção. Costuma conter copyright, links secundários e informações de contato.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;footer&gt;
+  &lt;p&gt;© 2025 Luigi&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">&lt;figure&gt; / &lt;figcaption&gt;</code>
+                    <span class="entry-badge">semântico</span>
+                </div>
+                <p class="entry-desc">Envolve conteúdo autônomo (imagem, gráfico, código) com legenda. Ambos se movem juntos no documento.</p>
+                <div class="entry-exemplo">
+                    <pre><code>&lt;figure&gt;
+  &lt;img src="grafico.png"
+       alt="Vendas 2025"&gt;
+  &lt;figcaption&gt;
+    Vendas por mês
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── CSS / SELETORES ── -->
+    <section class="secao" id="css-seletores">
+        <div class="secao-header">
+            <span class="secao-titulo">css · seletores & conceitos</span>
+            <div class="secao-line"></div>
+        </div>
+
+        <div class="dict-grid">
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">.classe</code>
+                    <span class="entry-badge">seletor</span>
+                </div>
+                <p class="entry-desc">Seleciona elementos pelo atributo <code>class</code>. Pode ser reutilizado em vários elementos. É o seletor mais comum.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.card {
+  background: #fff;
+  border-radius: 8px;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">#id</code>
+                    <span class="entry-badge">seletor</span>
+                </div>
+                <p class="entry-desc">Seleciona um único elemento pelo atributo <code>id</code>. Deve ser único por página. Alta especificidade.</p>
+                <div class="entry-exemplo">
+                    <pre><code>#header {
+  position: sticky;
+  top: 0;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">element</code>
+                    <span class="entry-badge">seletor</span>
+                </div>
+                <p class="entry-desc">Seleciona todas as tags daquele tipo. Ex: <code>p</code> afeta todos os parágrafos da página.</p>
+                <div class="entry-exemplo">
+                    <pre><code>p {
+  line-height: 1.7;
+  color: #333;
+}
+h1, h2 {
+  font-weight: 700;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">:hover / :focus</code>
+                    <span class="entry-badge">pseudo-classe</span>
+                </div>
+                <p class="entry-desc">Pseudo-classes de estado. <code>:hover</code> = mouse sobre o elemento; <code>:focus</code> = elemento focado (teclado/click).</p>
+                <div class="entry-exemplo">
+                    <pre><code>button:hover {
+  background: #0070f3;
+}
+input:focus {
+  outline: 2px solid blue;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">::before / ::after</code>
+                    <span class="entry-badge">pseudo-elemento</span>
+                </div>
+                <p class="entry-desc">Inserem conteúdo antes/depois de um elemento via CSS. Requerem a propriedade <code>content</code>.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.titulo::before {
+  content: "→ ";
+  color: #b08d6a;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">@media</code>
+                    <span class="entry-badge">responsivo</span>
+                </div>
+                <p class="entry-desc">Media queries aplicam estilos condicionalmente com base no tamanho da tela, orientação ou tipo de dispositivo.</p>
+                <div class="entry-exemplo">
+                    <pre><code>/* mobile first */
+.grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">display: flex</code>
+                    <span class="entry-badge">layout</span>
+                </div>
+                <p class="entry-desc">Ativa o Flexbox. Os elementos filhos se tornam <em>flex items</em>, controlados por <code>justify-content</code>, <code>align-items</code>, etc.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">display: grid</code>
+                    <span class="entry-badge">layout</span>
+                </div>
+                <p class="entry-desc">Ativa o CSS Grid — layout bidimensional. <code>grid-template-columns</code> define as colunas; <code>gap</code> controla o espaçamento.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.cards {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">position</code>
+                    <span class="entry-badge">layout</span>
+                </div>
+                <p class="entry-desc">Controla como o elemento é posicionado: <code>static</code> (padrão), <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.overlay {
+  position: fixed;
+  inset: 0; /* top/right/bottom/left: 0 */
+  z-index: 100;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">var(--custom)</code>
+                    <span class="entry-badge">variável</span>
+                </div>
+                <p class="entry-desc">Variáveis CSS (custom properties). Definidas com <code>--nome</code> no <code>:root</code> e usadas com <code>var(--nome)</code> em qualquer lugar.</p>
+                <div class="entry-exemplo">
+                    <pre><code>:root {
+  --cor-principal: #b08d6a;
+  --fonte: 'DM Sans', sans-serif;
+}
+
+h1 {
+  color: var(--cor-principal);
+  font-family: var(--fonte);
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">transition</code>
+                    <span class="entry-badge">animação</span>
+                </div>
+                <p class="entry-desc">Anima mudanças de propriedades CSS suavemente. Sintaxe: <code>propriedade duração easing delay</code>.</p>
+                <div class="entry-exemplo">
+                    <pre><code>.btn {
+  background: #333;
+  transition: background 0.25s ease,
+              transform 0.2s ease;
+}
+.btn:hover {
+  background: #b08d6a;
+  transform: translateY(-2px);
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-top">
+                    <code class="entry-tag">@keyframes</code>
+                    <span class="entry-badge">animação</span>
+                </div>
+                <p class="entry-desc">Define animações CSS personalizadas. Combinado com <code>animation</code> no elemento que deve ser animado.</p>
+                <div class="entry-exemplo">
+                    <pre><code>@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: subir 0.5s ease both;
+}</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="rodape">
+        dict html · luigi ferri maines · referência pessoal · 2025
+    </footer>
+
+</div>
+
+</body>
+</html>

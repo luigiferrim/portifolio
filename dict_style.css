@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── variáveis ────────────────────────────────── */
+:root {
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'DM Sans', sans-serif;
+    --mono:  'DM Mono', monospace;
+
+    --ink:        #1a1714;
+    --ink-soft:   #2e2a26;
+    --bronze:     #b08d6a;
+    --bronze-dim: rgba(176, 141, 106, 0.12);
+    --sand:       #d6c9b8;
+
+    --border:  rgba(176, 141, 106, 0.2);
+    --card:    rgba(22, 18, 14, 0.55);
+    --card-hover: rgba(30, 24, 18, 0.72);
+
+    --text-hi:  #f0ebe4;
+    --text-mid: #a89880;
+    --text-lo:  #6a5e52;
+    --text-code: #c9b89e;
+
+    --code-bg: rgba(0,0,0,0.35);
+
+    --ease: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── reset ────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--text-hi);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ── fundo ────────────────────────────────────── */
+.bg-photo {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center 15%;
+    filter: blur(1px) brightness(0.15) saturate(1.5);
+    transform: scale(1.06);
+}
+
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(176,141,106,0.08) 0%, transparent 65%),
+        linear-gradient(180deg, rgba(18,15,12,0.55) 0%, rgba(18,15,12,0.2) 40%, rgba(18,15,12,0.8) 100%);
+}
+
+.bg-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px;
+    pointer-events: none;
+}
+
+/* ── container ────────────────────────────────── */
+.page {
+    position: relative;
+    z-index: 10;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 80px 48px 72px;
+}
+
+/* ── header ───────────────────────────────────── */
+.header {
+    text-align: center;
+    margin-bottom: 64px;
+    animation: rise 0.6s ease both;
+}
+
+.label-topo {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--bronze);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.titulo-principal {
+    font-family: var(--serif);
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--text-hi);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.titulo-principal em {
+    font-style: italic;
+    color: var(--bronze);
+}
+
+.subtitulo {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+/* ── nav categorias ───────────────────────────── */
+.nav-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 0;
+    margin-bottom: 0;
+}
+
+.nav-categorias a {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-lo);
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: var(--ease);
+    letter-spacing: 0.3px;
+}
+
+.nav-categorias a:hover {
+    color: var(--text-hi);
+    border-color: var(--border);
+    background: var(--bronze-dim);
+}
+
+.nav-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-lo);
+    opacity: 0.3;
+    flex-shrink: 0;
+}
+
+/* ── divider ──────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin-bottom: 60px;
+}
+
+/* ── seções ───────────────────────────────────── */
+.secao {
+    margin-bottom: 68px;
+    animation: rise 0.6s ease both;
+    scroll-margin-top: 40px;
+}
+
+.secao:nth-child(1) { animation-delay: 0.05s; }
+.secao:nth-child(2) { animation-delay: 0.1s;  }
+.secao:nth-child(3) { animation-delay: 0.15s; }
+.secao:nth-child(4) { animation-delay: 0.2s;  }
+.secao:nth-child(5) { animation-delay: 0.25s; }
+.secao:nth-child(6) { animation-delay: 0.3s;  }
+.secao:nth-child(7) { animation-delay: 0.35s; }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+
+.secao-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.secao-titulo {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+}
+
+.secao-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ── grid de entries ──────────────────────────── */
+.dict-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* ── card de entry ────────────────────────────── */
+.entry-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px;
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: var(--ease);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.entry-card:hover {
+    border-color: rgba(176, 141, 106, 0.38);
+    background: var(--card-hover);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+    transform: translateY(-2px);
+}
+
+/* topo do card: tag + badge */
+.entry-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.entry-tag {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--bronze);
+    background: var(--bronze-dim);
+    border: 1px solid rgba(176, 141, 106, 0.22);
+    border-radius: 6px;
+    padding: 3px 10px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+.entry-badge {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--text-lo);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* descrição */
+.entry-desc {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.75;
+    flex: 1;
+}
+
+.entry-desc code {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-code);
+    background: rgba(0,0,0,0.28);
+    border-radius: 4px;
+    padding: 1px 5px;
+}
+
+/* bloco de exemplo de código */
+.entry-exemplo {
+    border-radius: 8px;
+    background: var(--code-bg);
+    border: 1px solid rgba(176, 141, 106, 0.1);
+    overflow: auto;
+}
+
+.entry-exemplo pre {
+    padding: 12px 14px;
+    margin: 0;
+}
+
+.entry-exemplo pre code {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-code);
+    line-height: 1.65;
+    white-space: pre;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* ── rodapé ───────────────────────────────────── */
+.rodape {
+    margin-top: 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    color: var(--text-lo);
+    letter-spacing: 0.6px;
+}
+
+/* ================================================================
+   MEDIA QUERIES — responsividade
+   ================================================================ */
+
+/* tablet largo (≤ 1024px): 2 colunas */
+@media (max-width: 1024px) {
+    .page {
+        max-width: 820px;
+        padding: 72px 40px 64px;
+    }
+
+    .dict-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .titulo-principal {
+        font-size: 2.8rem;
+    }
+}
+
+/* tablet (≤ 768px): ajustes de nav e padding */
+@media (max-width: 768px) {
+    .page {
+        padding: 64px 32px 56px;
+    }
+
+    .titulo-principal {
+        font-size: 2.4rem;
+    }
+
+    .subtitulo {
+        font-size: 0.88rem;
+    }
+
+    /* oculta separadores da nav para não quebrar mal */
+    .nav-sep {
+        display: none;
+    }
+
+    .nav-categorias {
+        gap: 6px;
+    }
+
+    .nav-categorias a {
+        font-size: 0.76rem;
+        padding: 4px 11px;
+    }
+
+    .dict-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .secao {
+        margin-bottom: 52px;
+    }
+}
+
+/* mobile (≤ 560px): coluna única */
+@media (max-width: 560px) {
+    .page {
+        padding: 52px 20px 48px;
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .label-topo {
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+    }
+
+    .subtitulo {
+        font-size: 0.84rem;
+    }
+
+    .dict-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .entry-card {
+        padding: 18px 18px 14px;
+    }
+
+    .entry-tag {
+        font-size: 0.76rem;
+        max-width: 65%;
+    }
+
+    .secao-titulo {
+        font-size: 1.15rem;
+    }
+
+    .secao {
+        margin-bottom: 44px;
+    }
+
+    .nav-categorias a {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+}
+
+/* mobile pequeno (≤ 380px) */
+@media (max-width: 380px) {
+    .page {
+        padding: 44px 16px 40px;
+    }
+
+    .titulo-principal {
+        font-size: 1.7rem;
+    }
+
+    .entry-card {
+        padding: 14px 14px 12px;
+    }
+
+    .entry-exemplo pre {
+        padding: 10px 12px;
+    }
+
+    .entry-exemplo pre code {
+        font-size: 0.66rem;
+    }
+}
